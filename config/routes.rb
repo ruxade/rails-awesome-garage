@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :cars do
     resources :reviews, only: [:create]
+    resources :favourites, only: [:create]
   end
 
 

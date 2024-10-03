@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to car_path(@car), notice: 'Review was successfully created.'
     else
-      render 'cars/show'  # Render the car show page again to show validation errors
+      render 'cars/show' # Render the car show page again to show validation errors
     end
   end
 
