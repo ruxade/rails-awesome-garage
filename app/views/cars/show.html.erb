@@ -1,0 +1,10 @@
+  <h3> <%= car.brand.capitalize %> </h3>
+      <p> Model: <%= car.model %></p>
+
+<h2> Add a review </h2>
+<%= simple_form_for(car) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :rating %>
+  <%= f.submit %>
+<% end %>

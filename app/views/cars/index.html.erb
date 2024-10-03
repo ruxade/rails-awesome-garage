@@ -1,0 +1,16 @@
+<h1>All Cars</h1>
+
+<ul>
+  <% @cars.each do |car| %>
+    <li>
+      <h3> <%= car.brand.capitalize %> </h3>
+      <p> Model: <%= car.model %></p>
+      <p> Fuel:  <%= car.fuel %></p>
+      <p> Year:  <%= car.year %></p>
+      <p> Owner: <%= car.owner.nickname %></p>
+      <%= link_to "more", car_path(car) %>
+
+    </li>
+  <% end %>
+
+</ul>
