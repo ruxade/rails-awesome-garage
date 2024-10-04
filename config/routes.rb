@@ -8,12 +8,11 @@ Rails.application.routes.draw do
     # get 'cars', to: 'cars#index'
     # get 'cars/:id', to: 'cars#show'
 
-  resources :cars, only: [:index, :show]
-
-  resources :cars do
+  resources :cars, only: [:index, :show] do
     resources :reviews, only: [:create]
     resources :favourites, only: [:create]
   end
+
 
 
   # Defines the root path route ("/")

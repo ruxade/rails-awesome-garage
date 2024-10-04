@@ -1,10 +1,19 @@
   <h3> <%= car.brand.capitalize %> </h3>
       <p> Model: <%= car.model %></p>
+      <p> Fuel:  <%= car.fuel %></p>
+      <p> Year:  <%= car.year %></p>
+      <p> Owner: <%= car.owner.nickname %></p>
 
+
+<div>
 <h2> Add a review </h2>
-<%= simple_form_for(car) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :rating %>
-  <%= f.submit %>
+<%= simple_form_for [@car, @review] do |f| %>
+  <%= f.input :comment, lable: false, placeholder:"Comment here" %>
+  <%= f.input :rating, collection: 0..5, lable: false %>
+
+  <%= f.submit 'Add a review' %>
 <% end %>
+</div>
+
+
+<%= @car.reviews %>
